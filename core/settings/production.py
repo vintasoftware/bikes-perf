@@ -1,5 +1,5 @@
 
-from decouple import config
+from decouple import config, Csv
 
 from .base import *
 
@@ -33,3 +33,5 @@ from dj_database_url import parse as db_url
 DATABASES = {
     'default': config('DATABASE_URL', cast=db_url)
 }
+
+MIDDLEWARE_CLASSES = config('MIDDLEWARE_CLASSES', cast=Csv())
