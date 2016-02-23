@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Your apps:
+    'core',
     'bikeways',
 ]
 
