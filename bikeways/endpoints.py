@@ -1,4 +1,4 @@
-from rest_framework import generics, filters
+from rest_framework import generics, filters, renderers
 
 from .models import Bikeway, BikewayCategory
 from .serializers import BikewaySerializer, BikewayCategorySerializer
@@ -24,6 +24,10 @@ class BikewayListAPIView(generics.ListAPIView):
         list(Bikeway.objects.all())
         list(Bikeway.objects.all())
         return response
+
+
+class BikewayListAPIJSONView(BikewayListAPIView):
+    renderer_classes = (renderers.JSONRenderer,)
 
 
 class BikewayCategoryListAPIView(generics.ListAPIView):
