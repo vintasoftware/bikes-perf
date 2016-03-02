@@ -19,6 +19,12 @@ class BikewayListAPIView(generics.ListAPIView):
                        'condition', 'length')
     ordering = ('length', 'name')
 
+    def list(self, request, *args, **kwargs):
+        response = super().list(request, *args, **kwargs)
+        list(Bikeway.objects.all())
+        list(Bikeway.objects.all())
+        return response
+
 
 class BikewayCategoryListAPIView(generics.ListAPIView):
     queryset = BikewayCategory.objects.all()
