@@ -1,5 +1,6 @@
 amqp==1.4.9
 anyjson==0.3.3
+appenlight-client==0.6.16
 appnope==0.1.0
 autopep8==1.2.2
 billiard==3.3.0.22
@@ -45,5 +46,6 @@ simplejson==3.8.2
 six==1.10.0
 sqlparse==0.1.18
 traitlets==4.1.0
+WebOb==1.5.1
 whitenoise==2.0.6
 yet-another-django-profiler==1.0.3

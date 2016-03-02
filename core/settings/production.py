@@ -1,4 +1,5 @@
 from decouple import config
+import appenlight_client.client as e_client
 
 from .base import *
 
@@ -18,6 +19,13 @@ OPBEAT = {
     'APP_ID': config('OPBEAT_APP_ID', default=''),
     'SECRET_TOKEN': config('OPBEAT_SECRET_TOKEN', default=''),
 }
+
+APPENLIGHT = e_client.get_config(
+    {'appenlight.api_key': config('APPENLIGHT_PRIVATE_KEY', default='')})
+
+MIDDLEWARE_CLASSES += \
+    ['appenlight_client.django_middleware.AppenlightMiddleware'] + \
+    MIDDLEWARE_CLASSES
 
 # STORAGES
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
