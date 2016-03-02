@@ -8,6 +8,17 @@ SECRET_KEY = config('SECRET_KEY', default='')
 
 # TODO - Set the allowed hosts
 
+INSTALLED_APPS += ('opbeat.contrib.django',)
+MIDDLEWARE_CLASSES += \
+    ['opbeat.contrib.django.middleware.OpbeatAPMMiddleware'] + \
+    MIDDLEWARE_CLASSES
+
+OPBEAT = {
+    'ORGANIZATION_ID': config('OPBEAT_ORGANIZATION_ID', default=''),
+    'APP_ID': config('OPBEAT_APP_ID', default=''),
+    'SECRET_TOKEN': config('OPBEAT_SECRET_TOKEN', default=''),
+}
+
 # STORAGES
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_ROOT = base_dir_join('staticfiles')
