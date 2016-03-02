@@ -1,4 +1,5 @@
 from rest_framework import generics, filters, renderers
+import requests
 
 from .models import Bikeway, BikewayCategory
 from .serializers import BikewaySerializer, BikewayCategorySerializer
@@ -23,6 +24,7 @@ class BikewayListAPIView(generics.ListAPIView):
         response = super().list(request, *args, **kwargs)
         list(Bikeway.objects.all())
         list(Bikeway.objects.all())
+        requests.get('https://api.github.com/').json()
         return response
 
 
