@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^api/v1/', include('bikeways.endpoints_urls')),
-
-    url(r'^silk/', include('silk.urls', namespace='silk')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [url(r'^silk/', include('silk.urls', namespace='silk'))]
