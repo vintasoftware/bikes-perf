@@ -40,7 +40,13 @@ QUERY_INSPECT_ENABLED = True
 
 # Silk
 INSTALLED_APPS += ['silk']
-MIDDLEWARE_CLASSES += ['silk.middleware.SilkyMiddleware']
+i = MIDDLEWARE_CLASSES.index(
+    'django.contrib.sessions.middleware.SessionMiddleware')
+l = len(MIDDLEWARE_CLASSES)
+MIDDLEWARE_CLASSES = \
+    MIDDLEWARE_CLASSES[0:i] + \
+    ['silk.middleware.SilkyMiddleware'] + \
+    MIDDLEWARE_CLASSES[i:l]
 SILKY_PYTHON_PROFILER = True
 SILKY_AUTHENTICATION = True
 SILKY_AUTHORISATION = True
