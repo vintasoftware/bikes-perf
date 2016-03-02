@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # Third party apps:
     'debug_toolbar',
     'rest_framework',
+    'silk',
+    'yet_another_django_profiler',
 
     # Your apps:
     'core',
@@ -55,6 +57,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'qinspect.middleware.QueryInspectMiddleware',
+    'yet_another_django_profiler.middleware.ProfilerMiddleware',
+    'silk.middleware.SilkyMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -139,6 +144,11 @@ LOGGING = {
             'handlers': ['console'],
             'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
         },
+        'qinspect': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
     },
 }
 
@@ -158,3 +168,19 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.redirects.RedirectsPanel',
     'debug_toolbar.panels.profiling.ProfilingPanel',
 ]
+
+
+# Query inspector
+QUERY_INSPECT_ENABLED = False
+QUERY_INSPECT_LOG_STATS = True
+QUERY_INSPECT_HEADER_STATS = True
+QUERY_INSPECT_LOG_QUERIES = True
+QUERY_INSPECT_ABSOLUTE_LIMIT = 100  # in milliseconds
+QUERY_INSPECT_STANDARD_DEVIATION_LIMIT = 2
+QUERY_INSPECT_LOG_TRACEBACKS = True
+QUERY_INSPECT_TRACEBACK_ROOTS = [BASE_DIR]
+
+# Silk
+SILKY_PYTHON_PROFILER = True
+SILKY_AUTHENTICATION = True
+SILKY_AUTHORISATION = True

@@ -34,3 +34,6 @@ DATABASES = {
         'ATOMIC_REQUESTS': True,
     }
 }
+
+# Query inspector
+QUERY_INSPECT_ENABLED = True
