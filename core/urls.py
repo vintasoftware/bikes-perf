@@ -20,6 +20,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^api/v1/', include('bikeways.endpoints_urls')),
-
-    url(r'^silk/', include('silk.urls', namespace='silk')),
 ]

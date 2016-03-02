@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     # Third party apps:
     'debug_toolbar',
     'rest_framework',
-    'silk',
     'yet_another_django_profiler',
 
     # Your apps:
@@ -59,7 +58,6 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'qinspect.middleware.QueryInspectMiddleware',
     'yet_another_django_profiler.middleware.ProfilerMiddleware',
-    'silk.middleware.SilkyMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -179,8 +177,3 @@ QUERY_INSPECT_ABSOLUTE_LIMIT = 100  # in milliseconds
 QUERY_INSPECT_STANDARD_DEVIATION_LIMIT = 2
 QUERY_INSPECT_LOG_TRACEBACKS = True
 QUERY_INSPECT_TRACEBACK_ROOTS = [BASE_DIR]
-
-# Silk
-SILKY_PYTHON_PROFILER = True
-SILKY_AUTHENTICATION = True
-SILKY_AUTHORISATION = True
