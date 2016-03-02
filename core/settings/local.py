@@ -19,7 +19,7 @@ BROKER_BACKEND = 'memory'
 CELERY_ALWAYS_EAGER = True
 
 # EMAIL
-INSTALLED_APPS += ('naomi',)
+INSTALLED_APPS += ['naomi',]
 EMAIL_BACKEND = "naomi.mail.backends.naomi.NaomiBackend"
 EMAIL_FILE_PATH = base_dir_join('tmp_email')
 
@@ -37,3 +37,10 @@ DATABASES = {
 
 # Query inspector
 QUERY_INSPECT_ENABLED = True
+
+# Silk
+INSTALLED_APPS += ['silk']
+MIDDLEWARE_CLASSES += ['silk.middleware.SilkyMiddleware']
+SILKY_PYTHON_PROFILER = True
+SILKY_AUTHENTICATION = True
+SILKY_AUTHORISATION = True
