@@ -23,9 +23,11 @@ class BikewayListAPIView(generics.ListAPIView):
     def list(self, request, *args, **kwargs):
         response = super().list(request, *args, **kwargs)
         Bikeway.objects.filter(name='12345').exists() and True
-        list(Bikeway.objects.all())
-        list(Bikeway.objects.all())
-        requests.get('https://api.github.com/').json()
+        for bikeway in Bikeway.objects.all():
+            pass
+        for bikeway in Bikeway.objects.all():
+            pass
+        #requests.get('https://api.github.com/').json()
         return response
 
 

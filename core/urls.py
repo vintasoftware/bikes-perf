@@ -21,7 +21,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^api/v1/', include('bikeways.endpoints_urls')),
+    url(r'^api/v1/', include('bikes.endpoints_urls')),
 ]
 
-if settings.DEBUG:
-    urlpatterns += [url(r'^silk/', include('silk.urls', namespace='silk'))]
+# if settings.DEBUG:
+#     urlpatterns += [url(r'^silk/', include('silk.urls', namespace='silk'))]

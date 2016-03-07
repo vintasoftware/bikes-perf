@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # Your apps:
     'core',
     'bikeways',
+    'bikes',
 ]
 
 MIDDLEWARE_CLASSES = [
