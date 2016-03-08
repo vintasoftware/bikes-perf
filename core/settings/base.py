@@ -148,6 +148,10 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
+        'nplusone': {
+            'handlers': ['console'],
+            'level': 'WARN',
+        },
     },
 }
 

@@ -1,6 +1,8 @@
 
 from .base import *
 
+import logging
+
 
 DEBUG = True
 
@@ -50,3 +52,10 @@ QUERY_INSPECT_ENABLED = True
 # SILKY_PYTHON_PROFILER = True
 # SILKY_AUTHENTICATION = True
 # SILKY_AUTHORISATION = True
+
+# nplusone
+INSTALLED_APPS += ['nplusone.ext.django']
+MIDDLEWARE_CLASSES = [
+    'nplusone.ext.django.NPlusOneMiddleware'] + MIDDLEWARE_CLASSES
+NPLUSONE_LOGGER = logging.getLogger('nplusone')
+NPLUSONE_LOG_LEVEL = logging.WARN
