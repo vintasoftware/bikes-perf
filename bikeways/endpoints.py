@@ -90,6 +90,3 @@ class BikewayListSlimAPIView(BikewayListAPIView):
     filter_backends = []
     renderer_classes = [renderers.JSONRenderer]
     content_negotiation_class = IgnoreClientContentNegotiation
-    search_fields = []
-    ordering_fields = []
-    ordering = []
