@@ -10,7 +10,7 @@ from .filter_backends import LimitFilterBackend
 
 
 class BikewayListAPIView(generics.ListAPIView):
-    queryset = Bikeway.objects.all()
+    queryset = Bikeway.objects.select_related('category')
     serializer_class = BikewaySerializer
     filter_backends = (filters.DjangoFilterBackend,
                        filters.SearchFilter,
