@@ -1,4 +1,5 @@
 from rest_framework import serializers
+import serpy
 
 from .models import Rider, Bike
 
@@ -15,3 +16,12 @@ class BikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bike
         fields = ('name', 'rider',)
+
+
+class RiderSerpySerializer(serpy.Serializer):
+    name = serpy.Field()
+
+
+class BikeSerpySerializer(serpy.Serializer):
+    name = serpy.Field()
+    rider = RiderSerpySerializer()

@@ -38,7 +38,7 @@ DATABASES = {
 }
 
 # Query inspector
-QUERY_INSPECT_ENABLED = True
+#QUERY_INSPECT_ENABLED = True
 
 # Silk
 # INSTALLED_APPS += ['silk']
@@ -54,8 +54,8 @@ QUERY_INSPECT_ENABLED = True
 # SILKY_AUTHORISATION = True
 
 # nplusone
-INSTALLED_APPS += ['nplusone.ext.django']
-MIDDLEWARE_CLASSES = [
-    'nplusone.ext.django.NPlusOneMiddleware'] + MIDDLEWARE_CLASSES
-NPLUSONE_LOGGER = logging.getLogger('nplusone')
-NPLUSONE_LOG_LEVEL = logging.WARN
+# INSTALLED_APPS += ['nplusone.ext.django']
+# MIDDLEWARE_CLASSES = [
+#     'nplusone.ext.django.NPlusOneMiddleware'] + MIDDLEWARE_CLASSES
+# NPLUSONE_LOGGER = logging.getLogger('nplusone')
+# NPLUSONE_LOG_LEVEL = logging.WARN

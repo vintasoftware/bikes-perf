@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third party apps:
-    'debug_toolbar',
+    #'debug_toolbar',
     'rest_framework',
-    'yet_another_django_profiler',
+    #'yet_another_django_profiler',
 
     # Your apps:
     'core',
@@ -57,8 +57,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'qinspect.middleware.QueryInspectMiddleware',
-    'yet_another_django_profiler.middleware.ProfilerMiddleware',
+    #'qinspect.middleware.QueryInspectMiddleware',
+    #'yet_another_django_profiler.middleware.ProfilerMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
